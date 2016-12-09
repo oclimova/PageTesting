@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="575d5440-8b9a-4e2b-8c10-bbaa43898750" name="Default" comment="" />
-    <list default="true" id="00a28200-8af1-44df-b80b-08355b92d58a" name="ProjectCreated" comment="" />
+    <list default="true" id="00a28200-8af1-44df-b80b-08355b92d58a" name="ProjectCreated" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" />
+    </list>
     <ignored path="PageTesting.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,8 +48,8 @@
       <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/HomePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="442">
+              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#372#373#0" expanded="true" />
@@ -56,10 +58,12 @@
                 <element signature="e#473#474#0" expanded="true" />
                 <element signature="e#520#521#0" expanded="true" />
                 <element signature="e#556#557#0" expanded="true" />
-                <element signature="e#588#589#0" expanded="true" />
-                <element signature="e#641#642#0" expanded="true" />
-                <element signature="e#681#682#0" expanded="true" />
-                <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#639#640#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#825#826#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -630,8 +634,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="442">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#372#373#0" expanded="true" />
@@ -640,10 +644,12 @@
             <element signature="e#473#474#0" expanded="true" />
             <element signature="e#520#521#0" expanded="true" />
             <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
           </folding>
         </state>
       </provider>

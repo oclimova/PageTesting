@@ -23,6 +23,10 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public void navigate() {
+        driver.get("http://172.16.44.49/oc/");
+    }
+
     public void clickLogin() {
         driver.findElement(loginLink).click();
     }
