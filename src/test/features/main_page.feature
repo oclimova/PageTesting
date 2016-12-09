@@ -1,6 +1,6 @@
-Feature: http://172.16.44.49/oc/ display main page
+Feature: http://172.16.44.49/oc/
   As a simple user
-  I want to be able to enter on the site main page
+  I want to be able to enter on the site main page, create account and login
 
   Scenario: unsigned user navigates to the home page
     Given I am an 'unsigned user' # I suppose in this function should be logout if needed
