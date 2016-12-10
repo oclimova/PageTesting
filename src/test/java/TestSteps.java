@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.HomePage;
 import pages.LogoutPage;
 import pages.RegisterAccountPage;
+import pages.WhateverPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +19,7 @@ public class TestSteps {
     private HomePage homePage;
     private RegisterAccountPage registerAccountPage;
     private LogoutPage logoutPage;
+    private WhateverPage whateverPage;
 
     @Before
     public void init() {
@@ -50,13 +52,16 @@ public class TestSteps {
     public void displayed(String pageName) {
         if (pageName.equals("home page")) {
             homePage = new HomePage(driver);
-            assertTrue(homePage.isActive());
+            assertTrue("Home page isn't displayed", homePage.isActive());
         }
     }
 
     @When("^I click on '(.*)' link$")
     public void clickLink(String linkName) {
         if (linkName.equals("create an account")) {
+            whateverPage = new WhateverPage(driver);
+            assertTrue("Out of the site", whateverPage.isActive());
+            whateverPage.clickCreateAccount();
         }
     }
 

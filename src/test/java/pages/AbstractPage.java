@@ -33,13 +33,11 @@ public abstract class AbstractPage {
     }
 
     public AbstractPage clickLogin() {
-        logout();
         getDriver().findElement(login).click();
         return this;
     }
 
     public AbstractPage clickCreateAccount() {
-        logout();
         getDriver().findElement(createAccount).click();
         return this;
     }

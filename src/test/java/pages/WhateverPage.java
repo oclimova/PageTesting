@@ -15,6 +15,6 @@ public class WhateverPage extends AbstractPage {
     }
 
     public boolean isActive() {
-        return true;
+        return getDriver().getCurrentUrl().contains("http://172.16.44.49/oc/");
     }
 }
