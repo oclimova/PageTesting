@@ -26,7 +26,7 @@ public class TestSteps {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        homePage = new HomePage(driver);
+        currentPage = homePage = new HomePage(driver);
     }
 
     @After
@@ -36,11 +36,8 @@ public class TestSteps {
     }
 
     @Given("^I am an unsigned user$")
-    public void unsignIfNecessary() {
-        homePage
-                .navigate()
-                .logout();
-        currentPage = homePage;
+    public void iAmUnsigned() {
+        currentPage.logout();
     }
 
     @When("^I navigated? to the '(.*)'@")
@@ -59,9 +56,16 @@ public class TestSteps {
     }
 
     @When("^I click on '(.*)' link$")
-    public void clickLink(String link) {
-        if (link.equals("create an account")) {
+    public void clickLink(String linkName) {
+        if (linkName.equals("create an account")) {
             currentPage.clickCreateAccount();
+        }
+    }
+
+    @Then("^I am redirected to the '(.*)'$")
+    public void redirectedTo(String pageTitle) {
+        if (pageTitle.equals("Register Account page")) {
+            assertTrue("I wasn't redirected to Register Account page", )
         }
     }
 }

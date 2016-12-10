@@ -34,7 +34,7 @@ public class RegisterAccountPage extends AbstractPage {
     }
 
     public boolean weAreHere() {
-        assertTrue(getDriver().getTitle().equals("Register Account"));
+        return getDriver().getTitle().equals("Register Account");
     }
 
     public RegisterAccountPage setFirstName(String value) {
