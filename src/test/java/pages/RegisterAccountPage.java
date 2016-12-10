@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class RegisterAccountPage {
+public class RegisterAccountPage extends AbstractPage {
     private WebDriver driver;
     private By
             firstName = By.name("firstname"),
@@ -22,61 +22,75 @@ public class RegisterAccountPage {
             noRadio = By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[2]"),
             privacyPolicy = By.xpath("//*[@id=\"content\"]/form/div[5]/div/input[1]");
 
-    public void setFirstName(String value) {
+    public RegisterAccountPage setFirstName(String value) {
         driver.findElement(firstName).sendKeys(value);
+        return this;
     }
 
-    public void setLastName(String value) {
+    public RegisterAccountPage setLastName(String value) {
         driver.findElement(lastName).sendKeys(value);
+        return this;
     }
 
-    public void setEmail(String value) {
+    public RegisterAccountPage setEmail(String value) {
         driver.findElement(email).sendKeys(value);
+        return this;
     }
 
-    public void setTelephone(String value) {
+    public RegisterAccountPage setTelephone(String value) {
         driver.findElement(telephone).sendKeys(value);
+        return this;
     }
 
-    public void setAddress1(String value) {
+    public RegisterAccountPage setAddress1(String value) {
         driver.findElement(address1).sendKeys(value);
+        return this;
     }
 
-    public void setCity(String value) {
+    public RegisterAccountPage setCity(String value) {
         driver.findElement(city).sendKeys(value);
+        return this;
     }
 
-    public void setPostcode(String value) {
+    public RegisterAccountPage setPostcode(String value) {
         driver.findElement(postcode).sendKeys(value);
+        return this;
     }
 
-    public void setRandomCountry() {
+    public RegisterAccountPage setRandomCountry() {
         Select select = new Select(driver.findElement(country));
         select.selectByIndex((int)(Math.random()*select.getOptions().size()));
+        return this;
     }
 
-    public void setRandomRegion() {
+    public RegisterAccountPage setRandomRegion() {
         Select select = new Select(driver.findElement(region));
         select.selectByIndex((int)(Math.random()*select.getOptions().size()));
+        return this;
     }
 
-    public void setPassword(String value) {
+    public RegisterAccountPage setPassword(String value) {
         driver.findElement(password).sendKeys(value);
+        return this;
     }
 
-    public void setPasswordConfirm(String value) {
+    public RegisterAccountPage setPasswordConfirm(String value) {
         driver.findElement(passwordConfirm).sendKeys(value);
+        return this;
     }
 
-    public void setYesRadio() {
+    public RegisterAccountPage setYesRadio() {
         driver.findElement(yesRadio).click();
+        return this;
     }
 
-    public void setNoRadio() {
+    public RegisterAccountPage setNoRadio() {
         driver.findElement(noRadio).click();
+        return this;
     }
 
-    public void setPrivacyPolicy() {
+    public RegisterAccountPage setPrivacyPolicy() {
         driver.findElement(privacyPolicy).click();
+        return this;
     }
 }

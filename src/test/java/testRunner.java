@@ -10,5 +10,5 @@ import org.junit.runner.RunWith;
         features = "src/test/features",
         tags = "@Run"
 )
-public class testRunner {
+public class TestRunner {
 }
