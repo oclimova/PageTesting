@@ -15,7 +15,7 @@ public class LogoutPage extends AbstractPage {
         return this;
     }
 
-    public boolean weAreHere() {
+    public boolean isActive() {
         return getDriver().getTitle().equals("Account Logout");
     }
 }

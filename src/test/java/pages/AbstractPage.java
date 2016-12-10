@@ -15,7 +15,7 @@ public abstract class AbstractPage {
             logout = By.xpath(".//*[text()='Logout']/..");
 
     public abstract AbstractPage navigate();
-    public abstract boolean weAreHere();
+    public abstract boolean isActive();
 
     public AbstractPage(WebDriver driver) {
         this.driver = driver;

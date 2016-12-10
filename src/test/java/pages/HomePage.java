@@ -15,7 +15,7 @@ public class HomePage extends AbstractPage {
         return this;
     }
 
-    public boolean weAreHere() {
+    public boolean isActive() {
         return getDriver().getTitle().equals("Your Store");
     }
 }
