@@ -1,7 +1,4 @@
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.java.en.*;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +38,7 @@ public class TestSteps {
         logoutPage.navigate();
     }
 
-    @When("^I navigated? to the '(.*)'@")
+    @When("^I navigated? to the '(.*)'$")
     public void navigate(String destination) {
         if (destination.equals("home page")) {
             homePage = new HomePage(driver);
@@ -74,11 +71,34 @@ public class TestSteps {
         }
     }
 
-    @And("all text fields on the '(.*)' are clear")
+    @And("^all text fields on the '(.*)' are clear$")
     public void textFieldsAreClear(String pageName) {
         if (pageName.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
             assertTrue("Text Fields are not clear", registerAccountPage.textFieldsAreClear());
+        }
+    }
+
+    @But("^'(.*)' field on the '(.*)' is filled with '(.*)' value$")
+    @And("^'(.*)' field on the '(.*)' is filled with '(.*)' value$")
+    public void fieldIsFilled(String fieldName, String pageName, String value) {
+        if (pageName.equals("Register Account page")) {
+            registerAccountPage = new RegisterAccountPage(driver);
+            if (fieldName.equals("Country")) {
+                assertTrue("Country field value doesn't match", registerAccountPage.getCountry().equals(value));
+            } else if (fieldName.equals("Region / State")) {
+                assertTrue("Region / State field value doesn't match", registerAccountPage.getRegion().equals(value));
+            }
+        }
+    }
+
+    @And("^'Subscribe' radio-group on the 'Register Account page' is set to 'No' value$")
+    public void radioGroupHasValue(String radiogroupName, String pageName, String value) {
+        if (pageName.equals("Register Account page")) {
+            registerAccountPage = new RegisterAccountPage(driver);
+            if (radiogroupName.equals("Subscribe")) {
+                assertTrue("Radio-group value doesn't match", registerAccountPage.getSubscribe().equals(value));
+            }
         }
     }
 }

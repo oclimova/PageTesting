@@ -117,6 +117,13 @@ public class RegisterAccountPage extends AbstractPage {
         return getElementText(passwordConfirm);
     }
 
+    public String getSubscribe() {
+        if (driver.findElement(yesRadio).isSelected())
+            return "Yes";
+        else
+            return "No";
+    }
+
     public RegisterAccountPage setFirstName(String value) {
         return (RegisterAccountPage)setElementText(firstName, value);
     }
