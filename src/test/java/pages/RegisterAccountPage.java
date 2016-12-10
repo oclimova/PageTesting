@@ -37,6 +37,53 @@ public class RegisterAccountPage extends AbstractPage {
         return getDriver().getTitle().equals("Register Account");
     }
 
+    public boolean textFieldsAreClear() {
+    }
+
+    public String getFirstName() {
+        return getElementText(firstName);
+    }
+
+    public String getLastName() {
+        return getElementText(lastName);
+    }
+
+    public String getEmail() {
+        return getElementText(email);
+    }
+
+    public String getTelephone() {
+        return getElementText(telephone);
+    }
+
+    public String getAddress1() {
+        return getElementText(address1);
+    }
+
+    public String getCity() {
+        return getElementText(city);
+    }
+
+    public String getPostcode() {
+        return getElementText(postcode);
+    }
+
+    public String getCountry() {
+        return getElementText(country);
+    }
+
+    public String getRegion() {
+        return getElementText(region);
+    }
+
+    public String getPassword() {
+        return getElementText(password);
+    }
+
+    public String getPasswordConfirm() {
+        return getElementText(passwordConfirm);
+    }
+
     public RegisterAccountPage setFirstName(String value) {
         driver.findElement(firstName).sendKeys(value);
         return this;

@@ -16,8 +16,7 @@ Feature: http://172.16.44.49/oc/
     Given I navigated to the 'home page'
     When I click on 'create an account' link
     Then I am redirected to the 'Register Account page'
-    And the 'Register Account page' is displayed
-    And all fields are clear
+    And all text fields or the 'Register Account page' are clear
     But 'Country' field is filled with 'United Kingdom' value
     And 'Region / State' field is filled with '--- Please Select ---' value
     And 'Subscribe' radio-group is set to 'No' value

@@ -1,3 +1,4 @@
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -70,6 +71,13 @@ public class TestSteps {
         if (pageTitle.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
             assertTrue("I wasn't redirected to Register Account page", registerAccountPage.isActive());
+        }
+    }
+
+    @And("all text fields or the '(.*)' are clear")
+    public void testFieldsAreClear(String pageName) {
+        if (pageName.equals("Register Account page")) {
+            registerAccountPage = new RegisterAccountPage(driver);
         }
     }
 }

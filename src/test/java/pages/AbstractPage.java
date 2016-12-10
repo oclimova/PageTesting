@@ -41,4 +41,8 @@ public abstract class AbstractPage {
         getDriver().findElement(createAccount).click();
         return this;
     }
+
+    protected String getElementText(By element) {
+        return driver.findElement(element).getText();
+    }
 }
