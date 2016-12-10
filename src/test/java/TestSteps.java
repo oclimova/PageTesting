@@ -74,10 +74,11 @@ public class TestSteps {
         }
     }
 
-    @And("all text fields or the '(.*)' are clear")
-    public void testFieldsAreClear(String pageName) {
+    @And("all text fields on the '(.*)' are clear")
+    public void textFieldsAreClear(String pageName) {
         if (pageName.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
+            assertTrue("Text Fields are not clear", registerAccountPage.textFieldsAreClear());
         }
     }
 }
