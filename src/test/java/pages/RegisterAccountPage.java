@@ -13,7 +13,11 @@ public class RegisterAccountPage extends AbstractPage {
             lastName = By.name("lastname"),
             email = By.name("email"),
             telephone = By.name("telephone"),
+            fax = By.name("fax"),
+            company = By.name("company"),
+            companyID = By.name("company_id"),
             address1 = By.name("address_1"),
+            address2 = By.name("address_2"),
             city = By.name("city"),
             postcode = By.name("postcode"),
             country = By.name("country_id"),
@@ -38,6 +42,19 @@ public class RegisterAccountPage extends AbstractPage {
     }
 
     public boolean textFieldsAreClear() {
+        return getFirstName().equals("")
+                && getLastName().equals("")
+                && getEmail().equals("")
+                && getTelephone().equals("")
+                && getFax().equals("")
+                && getCompany().equals("")
+                && getCompanyID().equals("")
+                && getAddress1().equals("")
+                && getAddress2().equals("")
+                && getCity().equals("")
+                && getPostcode().equals("")
+                && getPassword().equals("")
+                && getPasswordConfirm().equals("");
     }
 
     public String getFirstName() {
@@ -56,8 +73,24 @@ public class RegisterAccountPage extends AbstractPage {
         return getElementText(telephone);
     }
 
+    public String getFax() {
+        return getElementText(fax);
+    }
+
+    public String getCompany() {
+        return getElementText(company);
+    }
+
+    public String getCompanyID() {
+        return getElementText(companyID);
+    }
+
     public String getAddress1() {
         return getElementText(address1);
+    }
+
+    public String getAddress2() {
+        return getElementText(address2);
     }
 
     public String getCity() {
@@ -85,38 +118,47 @@ public class RegisterAccountPage extends AbstractPage {
     }
 
     public RegisterAccountPage setFirstName(String value) {
-        driver.findElement(firstName).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(firstName, value);
     }
 
     public RegisterAccountPage setLastName(String value) {
-        driver.findElement(lastName).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(lastName, value);
     }
 
     public RegisterAccountPage setEmail(String value) {
-        driver.findElement(email).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(email, value);
     }
 
     public RegisterAccountPage setTelephone(String value) {
-        driver.findElement(telephone).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(telephone, value);
+    }
+
+    public RegisterAccountPage setFax(String value) {
+        return (RegisterAccountPage)setElementText(fax, value);
+    }
+
+    public RegisterAccountPage setCompany(String value) {
+        return (RegisterAccountPage)setElementText(company, value);
+    }
+
+    public RegisterAccountPage setCompanyID(String value) {
+        return (RegisterAccountPage)setElementText(companyID, value);
     }
 
     public RegisterAccountPage setAddress1(String value) {
-        driver.findElement(address1).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(address1, value);
+    }
+
+    public RegisterAccountPage setAddress2(String value) {
+        return (RegisterAccountPage)setElementText(address2, value);
     }
 
     public RegisterAccountPage setCity(String value) {
-        driver.findElement(city).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(city, value);
     }
 
     public RegisterAccountPage setPostcode(String value) {
-        driver.findElement(postcode).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(postcode, value);
     }
 
     public RegisterAccountPage setRandomCountry() {
@@ -132,13 +174,11 @@ public class RegisterAccountPage extends AbstractPage {
     }
 
     public RegisterAccountPage setPassword(String value) {
-        driver.findElement(password).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(password, value);
     }
 
     public RegisterAccountPage setPasswordConfirm(String value) {
-        driver.findElement(passwordConfirm).sendKeys(value);
-        return this;
+        return (RegisterAccountPage)setElementText(passwordConfirm, value);
     }
 
     public RegisterAccountPage setYesRadio() {

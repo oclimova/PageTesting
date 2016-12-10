@@ -45,4 +45,9 @@ public abstract class AbstractPage {
     protected String getElementText(By element) {
         return driver.findElement(element).getText();
     }
+
+    protected AbstractPage setElementText(By element, String value) {
+        driver.findElement(element).sendKeys(value);
+        return this;
+    }
 }
