@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import pages.AbstractPage;
 import pages.HomePage;
 
 import java.util.concurrent.TimeUnit;
@@ -17,7 +18,8 @@ import static org.junit.Assert.assertTrue;
  */
 public class TestSteps {
     private WebDriver driver;
-    HomePage homePage;
+    private HomePage homePage;
+    private AbstractPage currentPage;
 
     @Before
     public void init() {
@@ -38,12 +40,14 @@ public class TestSteps {
         homePage
                 .navigate()
                 .logout();
+        currentPage = homePage;
     }
 
     @When("^I navigated? to the '(.*)'@")
     public void navigate(String destination) {
         if (destination.equals("home page")) {
             homePage.navigate();
+            currentPage = homePage;
         }
     }
 
@@ -54,5 +58,10 @@ public class TestSteps {
         }
     }
 
-    @When("^I click on 'create an account' link$")
+    @When("^I click on '(.*)' link$")
+    public void clickLink(String link) {
+        if (link.equals("create an account")) {
+            currentPage.clickCreateAccount();
+        }
+    }
 }

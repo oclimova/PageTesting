@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import static org.junit.Assert.assertTrue;
+
 public class RegisterAccountPage extends AbstractPage {
     private WebDriver driver;
     private By
@@ -21,6 +23,19 @@ public class RegisterAccountPage extends AbstractPage {
             yesRadio = By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[1]"),
             noRadio = By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[2]"),
             privacyPolicy = By.xpath("//*[@id=\"content\"]/form/div[5]/div/input[1]");
+
+    public RegisterAccountPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public RegisterAccountPage navigate() {
+        getDriver().get("http://172.16.44.49/oc/index.php?route=account/register");
+        return this;
+    }
+
+    public boolean weAreHere() {
+        assertTrue(getDriver().getTitle().equals("Register Account"));
+    }
 
     public RegisterAccountPage setFirstName(String value) {
         driver.findElement(firstName).sendKeys(value);
