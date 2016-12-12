@@ -3,11 +3,16 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public abstract class StoreAbstractPage extends AbstractPage {
-    private By login = By.xpath(".//*[text()='login']/.."),
-            createAccount = By.xpath(".//*[text()='create an account']/.."),
-            logout = By.xpath(".//*[text()='Logout']/..");
+    @FindBy(xpath = ".//*[text()='login']/..")
+    private WebElement login;
+    @FindBy(xpath = ".//*[text()='create an account']/..")
+    private WebElement createAccount;
+    @FindBy(xpath = ".//*[text()='Logout']/..")
+    private WebElement logout;
+
     private static final String PATH = "http://172.16.44.49/oc/";
 
     public static String getPath() {
@@ -19,19 +24,20 @@ public abstract class StoreAbstractPage extends AbstractPage {
     }
 
     public AbstractPage logout() {
-        WebElement logoutLink = getDriver().findElement(logout);
-        if (logoutLink != null)
-            logoutLink.click();
+        if (logout != null)
+            logout.click();
         return this;
     }
 
     public AbstractPage clickLogin() {
-        getDriver().findElement(login).click();
+        if (login != null)
+            login.click();
         return this;
     }
 
     public AbstractPage clickCreateAccount() {
-        getDriver().findElement(createAccount).click();
+        if (createAccount != null)
+            createAccount.click();
         return this;
     }
 }

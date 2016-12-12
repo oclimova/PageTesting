@@ -12,7 +12,6 @@ import java.util.Map;
 import static org.junit.Assert.assertTrue;
 
 public class RegisterAccountPage extends StoreAbstractPage {
-    private static Map<String, By> fields;
     @FindBy(name = "firstname")
     private WebElement firstName;
     @FindBy(name = "lastname")
