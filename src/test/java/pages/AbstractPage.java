@@ -14,13 +14,4 @@ public abstract class AbstractPage implements Page {
     public WebDriver getDriver() {
         return driver;
     }
-
-    protected String getElementText(By element) {
-        return driver.findElement(element).getText();
-    }
-
-    protected AbstractPage setElementText(By element, String value) {
-        driver.findElement(element).sendKeys(value);
-        return this;
-    }
 }

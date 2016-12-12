@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.HashMap;
@@ -11,28 +13,45 @@ import static org.junit.Assert.assertTrue;
 
 public class RegisterAccountPage extends StoreAbstractPage {
     private static Map<String, By> fields;
+    @FindBy(name = "firstname")
+    private WebElement firstName;
+    @FindBy(name = "lastname")
+    private WebElement lastName;
+    @FindBy(name = "email")
+    private WebElement email;
+    @FindBy(name = "telephone")
+    private WebElement telephone;
+    @FindBy(name = "fax")
+    private WebElement fax;
+    @FindBy(name = "company")
+    private WebElement company;
+    @FindBy(name = "company_id")
+    private WebElement companyID;
+    @FindBy(name = "address_1")
+    private WebElement address1;
+    @FindBy(name = "address_2")
+    private WebElement address2;
+    @FindBy(name = "city")
+    private WebElement city;
+    @FindBy(name = "postcode")
+    private WebElement postcode;
+    @FindBy(name = "country_id")
+    private WebElement country;
+    @FindBy(name = "zone_id")
+    private WebElement region;
+    @FindBy(name = "password")
+    private WebElement password;
+    @FindBy(name = "confirm")
+    private WebElement passwordConfirm;
+    @FindBy(xpath = "//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[1]")
+    private WebElement yesRadio;
+    @FindBy(xpath = "//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[2]")
+    private WebElement noRadio;
+    @FindBy(xpath = "//*[@id=\"content\"]/form/div[5]/div/input[1]")
+    private WebElement privacyPolicy;
 
     public RegisterAccountPage(WebDriver driver) {
         super(driver);
-        fields = new HashMap<String, By>();
-        fields.put("firstName", By.name("firstname"));
-        fields.put("lastName", By.name("lastname"));
-        fields.put("email", By.name("email"));
-        fields.put("telephone", By.name("telephone"));
-        fields.put("fax", By.name("fax"));
-        fields.put("company", By.name("company"));
-        fields.put("companyID", By.name("company_id"));
-        fields.put("address1", By.name("address_1"));
-        fields.put("address2", By.name("address_2"));
-        fields.put("city", By.name("city"));
-        fields.put("postcode", By.name("postcode"));
-        fields.put("country", By.name("country_id"));
-        fields.put("region", By.name("zone_id"));
-        fields.put("password", By.name("password"));
-        fields.put("passwordConfirm", By.name("confirm"));
-        fields.put("yesRadio", By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[1]"));
-        fields.put("noRadio", By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[2]"));
-        fields.put("privacyPolicy", By.xpath("//*[@id=\"content\"]/form/div[5]/div/input[1]"));
     }
 
     public RegisterAccountPage navigate() {
@@ -61,148 +80,161 @@ public class RegisterAccountPage extends StoreAbstractPage {
     }
 
     public String getFirstName() {
-        return getElementText(firstName);
+        return firstName.getText();
     }
 
     public String getLastName() {
-        return getElementText(lastName);
+        return lastName.getText();
     }
 
     public String getEmail() {
-        return getElementText(email);
+        return email.getText();
     }
 
     public String getTelephone() {
-        return getElementText(telephone);
+        return telephone.getText();
     }
 
     public String getFax() {
-        return getElementText(fax);
+        return fax.getText();
     }
 
     public String getCompany() {
-        return getElementText(company);
+        return company.getText();
     }
 
     public String getCompanyID() {
-        return getElementText(companyID);
+        return companyID.getText();
     }
 
     public String getAddress1() {
-        return getElementText(address1);
+        return address1.getText();
     }
 
     public String getAddress2() {
-        return getElementText(address2);
+        return address2.getText();
     }
 
     public String getCity() {
-        return getElementText(city);
+        return city.getText();
     }
 
     public String getPostcode() {
-        return getElementText(postcode);
+        return postcode.getText();
     }
 
     public String getCountry() {
-        return getElementText(country);
+        return country.getText();
     }
 
     public String getRegion() {
-        return getElementText(region);
+        return region.getText();
     }
 
     public String getPassword() {
-        return getElementText(password);
+        return password.getText();
     }
 
     public String getPasswordConfirm() {
-        return getElementText(passwordConfirm);
+        return passwordConfirm.getText();
     }
 
     public String getSubscribe() {
-        if (getDriver().findElement(yesRadio).isSelected())
+        if (yesRadio.isSelected())
             return "Yes";
         else
             return "No";
     }
 
     public RegisterAccountPage setFirstName(String value) {
-        return (RegisterAccountPage)setElementText(firstName, value);
+        firstName.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setLastName(String value) {
-        return (RegisterAccountPage)setElementText(lastName, value);
+        lastName.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setEmail(String value) {
-        return (RegisterAccountPage)setElementText(email, value);
+        email.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setTelephone(String value) {
-        return (RegisterAccountPage)setElementText(telephone, value);
+        telephone.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setFax(String value) {
-        return (RegisterAccountPage)setElementText(fax, value);
+        fax.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setCompany(String value) {
-        return (RegisterAccountPage)setElementText(company, value);
+        company.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setCompanyID(String value) {
-        return (RegisterAccountPage)setElementText(companyID, value);
+        companyID.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setAddress1(String value) {
-        return (RegisterAccountPage)setElementText(address1, value);
+        address1.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setAddress2(String value) {
-        return (RegisterAccountPage)setElementText(address2, value);
+        address2.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setCity(String value) {
-        return (RegisterAccountPage)setElementText(city, value);
+        city.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setPostcode(String value) {
-        return (RegisterAccountPage)setElementText(postcode, value);
+        postcode.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setRandomCountry() {
-        Select select = new Select(getDriver().findElement(country));
+        Select select = new Select(country);
         select.selectByIndex((int)(Math.random()*select.getOptions().size()));
         return this;
     }
 
     public RegisterAccountPage setRandomRegion() {
-        Select select = new Select(getDriver().findElement(region));
+        Select select = new Select(region);
         select.selectByIndex((int)(Math.random()*select.getOptions().size()));
         return this;
     }
 
     public RegisterAccountPage setPassword(String value) {
-        return (RegisterAccountPage)setElementText(password, value);
+        password.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setPasswordConfirm(String value) {
-        return (RegisterAccountPage)setElementText(passwordConfirm, value);
+        passwordConfirm.sendKeys(value);
+        return this;
     }
 
     public RegisterAccountPage setYesRadio() {
-        getDriver().findElement(yesRadio).click();
+        yesRadio.click();
         return this;
     }
 
     public RegisterAccountPage setNoRadio() {
-        getDriver().findElement(noRadio).click();
+        noRadio.click();
         return this;
     }
 
     public RegisterAccountPage setPrivacyPolicy() {
-        getDriver().findElement(privacyPolicy).click();
+        privacyPolicy.click();
         return this;
     }
 }
