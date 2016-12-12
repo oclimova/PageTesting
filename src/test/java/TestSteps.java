@@ -8,6 +8,7 @@ import pages.LogoutPage;
 import pages.RegisterAccountPage;
 import pages.WhateverPage;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
@@ -41,10 +42,11 @@ public class TestSteps {
 
     @When("^I navigated? to the '(.*)'$")
     public void navigate(String destination) throws Throwable {
-        if (destination.equals("home page")) {
-            homePage = new HomePage(driver);
-            homePage.navigate();
-        }
+//        if (destination.equals("home page")) {
+//            homePage = new HomePage(driver);
+//            homePage.navigate();
+//        }
+        Class pageClass;
     }
 
     @Then("^the '(.*)' is displayed$")
