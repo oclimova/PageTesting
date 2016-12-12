@@ -11,7 +11,7 @@ public class WhateverPage extends StoreAbstractPage {
         return this;
     }
 
-    public boolean isActive() {
+    public boolean isCurrentPage() {
         return getDriver().getCurrentUrl().contains("http://172.16.44.49/oc/");
     }
 }

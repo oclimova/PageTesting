@@ -8,7 +8,6 @@ import pages.LogoutPage;
 import pages.RegisterAccountPage;
 import pages.WhateverPage;
 
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
@@ -53,7 +52,7 @@ public class TestSteps {
     public void displayed(String pageName) throws Throwable {
         if (pageName.equals("home page")) {
             homePage = new HomePage(driver);
-            assertTrue("Home page isn't displayed", homePage.isActive());
+            assertTrue("Home page isn't displayed", homePage.isCurrentPage());
         }
     }
 
@@ -61,7 +60,7 @@ public class TestSteps {
     public void clickLink(String linkName) throws Throwable {
         if (linkName.equals("create an account")) {
             whateverPage = new WhateverPage(driver);
-            assertTrue("Out of the site", whateverPage.isActive());
+            assertTrue("Out of the site", whateverPage.isCurrentPage());
             whateverPage.clickCreateAccount();
         }
     }
@@ -70,7 +69,7 @@ public class TestSteps {
     public void redirectedTo(String pageTitle) throws Throwable {
         if (pageTitle.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
-            assertTrue("I wasn't redirected to Register Account page", registerAccountPage.isActive());
+            assertTrue("I wasn't redirected to Register Account page", registerAccountPage.isCurrentPage());
         }
     }
 

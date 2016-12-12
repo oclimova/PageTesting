@@ -4,6 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 public interface Page {
     AbstractPage navigate();
-    boolean isActive();
+    boolean isCurrentPage();
     WebDriver getDriver();
 }

@@ -64,7 +64,7 @@ public class RegisterAccountPage extends StoreAbstractPage {
         return this;
     }
 
-    public boolean isActive() {
+    public boolean isCurrentPage() {
         return getDriver().getTitle().equals("Register Account");
     }
 
