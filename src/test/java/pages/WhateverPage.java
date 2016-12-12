@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class WhateverPage extends AbstractPage {
+public class WhateverPage extends StoreAbstractPage {
     public WhateverPage(WebDriver driver) {
         super(driver);
     }

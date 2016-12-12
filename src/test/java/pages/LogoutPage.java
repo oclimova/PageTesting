@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class LogoutPage extends AbstractPage {
+public class LogoutPage extends StoreAbstractPage {
     public LogoutPage(WebDriver webdriver) {
         super(webdriver);
     }

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import static org.junit.Assert.assertTrue;
 
-public class RegisterAccountPage extends AbstractPage {
+public class RegisterAccountPage extends StoreAbstractPage {
     private By
             firstName = By.name("firstname"),
             lastName = By.name("lastname"),
