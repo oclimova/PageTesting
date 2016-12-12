@@ -20,26 +20,27 @@ public class TestSteps {
     private WhateverPage whateverPage;
 
     @Before
-    public void init() {
+    public void init() throws Throwable {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        new HomePage(driver).navigate();
     }
 
     @After
-    public void close() {
+    public void close() throws Throwable {
         if (driver != null)
             driver.quit();
     }
 
     @Given("^I am an unsigned user$")
-    public void iAmUnsigned() {
+    public void iAmUnsigned() throws Throwable {
         logoutPage = new LogoutPage(driver);
         logoutPage.navigate();
     }
 
     @When("^I navigated? to the '(.*)'$")
-    public void navigate(String destination) {
+    public void navigate(String destination) throws Throwable {
         if (destination.equals("home page")) {
             homePage = new HomePage(driver);
             homePage.navigate();
@@ -47,7 +48,7 @@ public class TestSteps {
     }
 
     @Then("^the '(.*)' is displayed$")
-    public void displayed(String pageName) {
+    public void displayed(String pageName) throws Throwable {
         if (pageName.equals("home page")) {
             homePage = new HomePage(driver);
             assertTrue("Home page isn't displayed", homePage.isActive());
@@ -55,7 +56,7 @@ public class TestSteps {
     }
 
     @When("^I click on '(.*)' link$")
-    public void clickLink(String linkName) {
+    public void clickLink(String linkName) throws Throwable {
         if (linkName.equals("create an account")) {
             whateverPage = new WhateverPage(driver);
             assertTrue("Out of the site", whateverPage.isActive());
@@ -64,7 +65,7 @@ public class TestSteps {
     }
 
     @Then("^I am redirected to the '(.*)'$")
-    public void redirectedTo(String pageTitle) {
+    public void redirectedTo(String pageTitle) throws Throwable {
         if (pageTitle.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
             assertTrue("I wasn't redirected to Register Account page", registerAccountPage.isActive());
@@ -72,7 +73,7 @@ public class TestSteps {
     }
 
     @And("^all text fields on the '(.*)' are clear$")
-    public void textFieldsAreClear(String pageName) {
+    public void textFieldsAreClear(String pageName) throws Throwable {
         if (pageName.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
             assertTrue("Text Fields are not clear", registerAccountPage.textFieldsAreClear());
@@ -81,7 +82,7 @@ public class TestSteps {
 
     @But("^'(.*)' field on the '(.*)' is filled with '(.*)' value$")
     @And("^'(.*)' field on the '(.*)' is filled with '(.*)' value$")
-    public void fieldIsFilled(String fieldName, String pageName, String value) {
+    public void fieldIsFilled(String fieldName, String pageName, String value) throws Throwable {
         if (pageName.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
             if (fieldName.equals("Country")) {
@@ -93,7 +94,7 @@ public class TestSteps {
     }
 
     @And("^'Subscribe' radio-group on the 'Register Account page' is set to 'No' value$")
-    public void radioGroupHasValue(String radiogroupName, String pageName, String value) {
+    public void radioGroupHasValue(String radiogroupName, String pageName, String value) throws Throwable {
         if (pageName.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
             if (radiogroupName.equals("Subscribe")) {
