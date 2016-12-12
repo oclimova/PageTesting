@@ -9,12 +9,12 @@ public class LogoutPage extends StoreAbstractPage {
         super(webdriver);
     }
 
-    public static String getPath() {
-        return PATH;
+    public String getPath() {
+        return super.getPath() + PATH;
     }
 
     public LogoutPage navigate() {
-        getDriver().get(super.getPath() + this.getPath());
+        getDriver().get(getPath());
         return this;
     }
 

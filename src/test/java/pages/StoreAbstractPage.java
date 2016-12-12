@@ -15,7 +15,7 @@ public abstract class StoreAbstractPage extends AbstractPage {
 
     private static final String PATH = "http://172.16.44.49/oc/";
 
-    public static String getPath() {
+    public String getPath() {
         return PATH;
     }
 

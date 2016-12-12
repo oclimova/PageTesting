@@ -11,7 +11,11 @@ public class WhateverPage extends StoreAbstractPage {
         return this;
     }
 
+    public String getPath() {
+        return super.getPath();
+    }
+
     public boolean isCurrentPage() {
-        return getDriver().getCurrentUrl().contains("http://172.16.44.49/oc/");
+        return getDriver().getCurrentUrl().contains(getPath());
     }
 }

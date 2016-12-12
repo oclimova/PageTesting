@@ -14,4 +14,8 @@ public abstract class AbstractPage implements Page {
     public WebDriver getDriver() {
         return driver;
     }
+
+    public String getPath() {
+        return "";
+    }
 }

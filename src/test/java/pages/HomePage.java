@@ -11,12 +11,12 @@ public class HomePage extends StoreAbstractPage {
         super(driver);
     }
 
-    public static String getPath() {
-        return PATH;
+    public String getPath() {
+        return super.getPath() + PATH;
     }
 
     public HomePage navigate() {
-        getDriver().get(super.getPath() + this.getPath());
+        getDriver().get(getPath());
         return this;
     }
 
