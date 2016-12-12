@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 import static org.junit.Assert.assertTrue;
 
 public class RegisterAccountPage extends AbstractPage {
-    private WebDriver driver;
     private By
             firstName = By.name("firstname"),
             lastName = By.name("lastname"),
@@ -118,7 +117,7 @@ public class RegisterAccountPage extends AbstractPage {
     }
 
     public String getSubscribe() {
-        if (driver.findElement(yesRadio).isSelected())
+        if (getDriver().findElement(yesRadio).isSelected())
             return "Yes";
         else
             return "No";
@@ -169,13 +168,13 @@ public class RegisterAccountPage extends AbstractPage {
     }
 
     public RegisterAccountPage setRandomCountry() {
-        Select select = new Select(driver.findElement(country));
+        Select select = new Select(getDriver().findElement(country));
         select.selectByIndex((int)(Math.random()*select.getOptions().size()));
         return this;
     }
 
     public RegisterAccountPage setRandomRegion() {
-        Select select = new Select(driver.findElement(region));
+        Select select = new Select(getDriver().findElement(region));
         select.selectByIndex((int)(Math.random()*select.getOptions().size()));
         return this;
     }
@@ -189,17 +188,17 @@ public class RegisterAccountPage extends AbstractPage {
     }
 
     public RegisterAccountPage setYesRadio() {
-        driver.findElement(yesRadio).click();
+        getDriver().findElement(yesRadio).click();
         return this;
     }
 
     public RegisterAccountPage setNoRadio() {
-        driver.findElement(noRadio).click();
+        getDriver().findElement(noRadio).click();
         return this;
     }
 
     public RegisterAccountPage setPrivacyPolicy() {
-        driver.findElement(privacyPolicy).click();
+        getDriver().findElement(privacyPolicy).click();
         return this;
     }
 }
