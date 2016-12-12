@@ -4,31 +4,35 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.assertTrue;
 
 public class RegisterAccountPage extends StoreAbstractPage {
-    private By
-            firstName = By.name("firstname"),
-            lastName = By.name("lastname"),
-            email = By.name("email"),
-            telephone = By.name("telephone"),
-            fax = By.name("fax"),
-            company = By.name("company"),
-            companyID = By.name("company_id"),
-            address1 = By.name("address_1"),
-            address2 = By.name("address_2"),
-            city = By.name("city"),
-            postcode = By.name("postcode"),
-            country = By.name("country_id"),
-            region = By.name("zone_id"),
-            password = By.name("password"),
-            passwordConfirm = By.name("confirm"),
-            yesRadio = By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[1]"),
-            noRadio = By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[2]"),
-            privacyPolicy = By.xpath("//*[@id=\"content\"]/form/div[5]/div/input[1]");
+    private static Map<String, By> fields;
 
     public RegisterAccountPage(WebDriver driver) {
         super(driver);
+        fields = new HashMap<String, By>();
+        fields.put("firstName", By.name("firstname"));
+        fields.put("lastName", By.name("lastname"));
+        fields.put("email", By.name("email"));
+        fields.put("telephone", By.name("telephone"));
+        fields.put("fax", By.name("fax"));
+        fields.put("company", By.name("company"));
+        fields.put("companyID", By.name("company_id"));
+        fields.put("address1", By.name("address_1"));
+        fields.put("address2", By.name("address_2"));
+        fields.put("city", By.name("city"));
+        fields.put("postcode", By.name("postcode"));
+        fields.put("country", By.name("country_id"));
+        fields.put("region", By.name("zone_id"));
+        fields.put("password", By.name("password"));
+        fields.put("passwordConfirm", By.name("confirm"));
+        fields.put("yesRadio", By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[1]"));
+        fields.put("noRadio", By.xpath("//*[@id=\"content\"]/form/div[4]/table/tbody/tr/td[2]/input[2]"));
+        fields.put("privacyPolicy", By.xpath("//*[@id=\"content\"]/form/div[5]/div/input[1]"));
     }
 
     public RegisterAccountPage navigate() {
