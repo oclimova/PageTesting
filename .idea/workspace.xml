@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list id="575d5440-8b9a-4e2b-8c10-bbaa43898750" name="Default" comment="" />
     <list default="true" id="00a28200-8af1-44df-b80b-08355b92d58a" name="ProjectCreated" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestSteps.java" afterPath="$PROJECT_DIR$/src/test/java/TestSteps.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/pages/RegisterAccountPage.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pages/AbstractPage.java" afterPath="$PROJECT_DIR$/src/test/java/pages/AbstractPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pages/LogoutPage.java" afterPath="$PROJECT_DIR$/src/test/java/pages/LogoutPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pages/WhateverPage.java" afterPath="$PROJECT_DIR$/src/test/java/pages/WhateverPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pages/StoreAbstractPage.java" afterPath="$PROJECT_DIR$/src/test/java/pages/StoreAbstractPage.java" />
     </list>
     <ignored path="PageTesting.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Page.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/Page.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -73,9 +73,21 @@
       <file leaf-file-name="AbstractPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/AbstractPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StoreAbstractPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pages/StoreAbstractPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,8 +128,8 @@
       <file leaf-file-name="RegisterAccountPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/RegisterAccountPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="123" column="24" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+            <state relative-caret-position="68">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding>
                 <element signature="method#navigate#0;class#RegisterAccountPage#0" expanded="false" />
                 <element signature="method#textFieldsAreClear#0;class#RegisterAccountPage#0" expanded="false" />
@@ -126,15 +138,9 @@
                 <element signature="method#setTelephone#0;class#RegisterAccountPage#0" expanded="false" />
                 <element signature="method#setCompanyID#0;class#RegisterAccountPage#0" expanded="false" />
                 <element signature="method#setAddress1#0;class#RegisterAccountPage#0" expanded="false" />
-                <element signature="method#setAddress2#0;class#RegisterAccountPage#0" expanded="false" />
                 <element signature="method#setPostcode#0;class#RegisterAccountPage#0" expanded="false" />
-                <element signature="method#setRandomCountry#0;class#RegisterAccountPage#0" expanded="false" />
-                <element signature="method#setRandomRegion#0;class#RegisterAccountPage#0" expanded="false" />
                 <element signature="method#setPassword#0;class#RegisterAccountPage#0" expanded="false" />
                 <element signature="method#setPasswordConfirm#0;class#RegisterAccountPage#0" expanded="false" />
-                <element signature="method#setYesRadio#0;class#RegisterAccountPage#0" expanded="false" />
-                <element signature="method#setNoRadio#0;class#RegisterAccountPage#0" expanded="false" />
-                <element signature="method#setPrivacyPolicy#0;class#RegisterAccountPage#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -160,8 +166,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -182,12 +188,13 @@
         <option value="$PROJECT_DIR$/src/test/java/pages/HomePage.java" />
         <option value="$PROJECT_DIR$/src/test/features/main_page.feature" />
         <option value="$PROJECT_DIR$/src/test/features/store.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/pages/RegisterAccountPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestSteps.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pages/Page.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pages/AbstractPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/pages/WhateverPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/pages/LogoutPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/RegisterAccountPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/Page.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/AbstractPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/StoreAbstractPage.java" />
       </list>
     </option>
   </component>
@@ -733,11 +740,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pages/AbstractPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -770,31 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pages/RegisterAccountPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="123" column="24" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
-          <folding>
-            <element signature="method#navigate#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#textFieldsAreClear#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setFirstName#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setLastName#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setTelephone#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setCompanyID#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setAddress1#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setAddress2#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setPostcode#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setRandomCountry#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setRandomRegion#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setPassword#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setPasswordConfirm#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setYesRadio#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setNoRadio#0;class#RegisterAccountPage#0" expanded="false" />
-            <element signature="method#setPrivacyPolicy#0;class#RegisterAccountPage#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/LogoutPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -808,21 +792,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestSteps.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/RegisterAccountPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        <state relative-caret-position="68">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#navigate#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#textFieldsAreClear#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#setFirstName#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#setLastName#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#setTelephone#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#setCompanyID#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#setAddress1#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#setPostcode#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#setPassword#0;class#RegisterAccountPage#0" expanded="false" />
+            <element signature="method#setPasswordConfirm#0;class#RegisterAccountPage#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="119">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/AbstractPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/StoreAbstractPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
