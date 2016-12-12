@@ -12,6 +12,8 @@ import java.util.Map;
 import static org.junit.Assert.assertTrue;
 
 public class RegisterAccountPage extends StoreAbstractPage {
+    private static final String PATH = "index.php?route=account/register";
+
     @FindBy(name = "firstname")
     private WebElement firstName;
     @FindBy(name = "lastname")
@@ -53,8 +55,12 @@ public class RegisterAccountPage extends StoreAbstractPage {
         super(driver);
     }
 
+    public static String getPath() {
+        return PATH;
+    }
+
     public RegisterAccountPage navigate() {
-        getDriver().get("http://172.16.44.49/oc/index.php?route=account/register");
+        getDriver().get(super.getPath() + this.getPath());
         return this;
     }
 

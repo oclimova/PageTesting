@@ -5,13 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HomePage extends StoreAbstractPage {
+    private static final String PATH = "index.php?route=common/home";
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
+    public static String getPath() {
+        return PATH;
+    }
+
     public HomePage navigate() {
-        getDriver().get("http://172.16.44.49/oc/");
+        getDriver().get(super.getPath() + this.getPath());
         return this;
     }
 
