@@ -8,6 +8,11 @@ public abstract class StoreAbstractPage extends AbstractPage {
     private By login = By.xpath(".//*[text()='login']/.."),
             createAccount = By.xpath(".//*[text()='create an account']/.."),
             logout = By.xpath(".//*[text()='Logout']/..");
+    private static final String PATH = "http://172.16.44.49/oc/";
+
+    public static String getPath() {
+        return PATH;
+    }
 
     public StoreAbstractPage(WebDriver driver) {
         super(driver);
