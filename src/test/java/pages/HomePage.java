@@ -21,6 +21,10 @@ public class HomePage extends StoreAbstractPage {
     }
 
     public boolean isCurrentPage() {
-        return getDriver().getTitle().equals("Your Store");
+        return isCurrentPage(getDriver());
+    }
+
+    public static boolean isCurrentPage(WebDriver driver) {
+        return driver.getTitle().equals("Your Store");
     }
 }

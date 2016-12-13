@@ -65,7 +65,11 @@ public class RegisterAccountPage extends StoreAbstractPage {
     }
 
     public boolean isCurrentPage() {
-        return getDriver().getTitle().equals("Register Account");
+        return isCurrentPage(getDriver());
+    }
+
+    public static boolean isCurrentPage(WebDriver driver) {
+        return driver.getTitle().equals("Register Account");
     }
 
     public boolean textFieldsAreClear() {

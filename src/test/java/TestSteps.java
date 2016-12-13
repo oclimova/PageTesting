@@ -71,7 +71,7 @@ public class TestSteps {
         }
     }
 
-    @And("^all text fields on the '(.*)' are clear$")
+    @Then("^all text fields on the '(.*)' are clear$")
     public void textFieldsAreClear(String pageName) throws Throwable {
         if (pageName.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
@@ -79,8 +79,7 @@ public class TestSteps {
         }
     }
 
-    @But("^'(.*)' field on the '(.*)' is filled with '(.*)' value$")
-    @And("^'(.*)' field on the '(.*)' is filled with '(.*)' value$")
+    @Then("^'(.*)' field on the '(.*)' is filled with '(.*)' value$")
     public void fieldIsFilled(String fieldName, String pageName, String value) throws Throwable {
         if (pageName.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);
@@ -92,7 +91,7 @@ public class TestSteps {
         }
     }
 
-    @And("^'Subscribe' radio-group on the 'Register Account page' is set to 'No' value$")
+    @Then("^'Subscribe' radio-group on the 'Register Account page' is set to 'No' value$")
     public void radioGroupHasValue(String radiogroupName, String pageName, String value) throws Throwable {
         if (pageName.equals("Register Account page")) {
             registerAccountPage = new RegisterAccountPage(driver);

@@ -19,6 +19,10 @@ public class LogoutPage extends StoreAbstractPage {
     }
 
     public boolean isCurrentPage() {
-        return getDriver().getTitle().equals("Account Logout");
+        return isCurrentPage(getDriver());
+    }
+
+    public static boolean isCurrentPage(WebDriver driver) {
+        return driver.getTitle().equals("Account Logout");
     }
 }

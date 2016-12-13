@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.nio.file.Path;
+
 public abstract class StoreAbstractPage extends AbstractPage {
     @FindBy(xpath = ".//*[text()='login']/..")
     private WebElement login;
@@ -43,5 +45,9 @@ public abstract class StoreAbstractPage extends AbstractPage {
 
     public boolean isCurrentPage() {
         return getDriver().getCurrentUrl().contains(PATH);
+    }
+
+    public static boolean isCurrentPage(WebDriver driver) {
+        return driver.getCurrentUrl().contains(PATH);
     }
 }
