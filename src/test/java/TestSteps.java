@@ -3,6 +3,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import pages.AbstractPage;
 import pages.HomePage;
 import pages.LogoutPage;
 import pages.RegisterAccountPage;
@@ -37,7 +38,7 @@ public class TestSteps {
         logoutPage.navigate();
     }
 
-    @When("^I navigated? to the '(.*)'$")
+    @When("^I navigate(?:d?) to the '(.*)'$")
     public void navigate(String destination) throws Throwable {
 //        if (destination.equals("home page")) {
 //            homePage = new HomePage(driver);
@@ -54,13 +55,8 @@ public class TestSteps {
         }
     }
 
-    @When("^I click on '(.*)' link$")
-    public void clickLink(String linkName) throws Throwable {
-        if (linkName.equals("create an account")) {
-            whateverPage = new WhateverPage(driver);
-            assertTrue("Out of the site", whateverPage.isCurrentPage());
-            whateverPage.clickCreateAccount();
-        }
+    @When("^I click on '(.*)' link from the '(.*)'$")
+    public void clickLink(String linkName, String pageName) throws Throwable {
     }
 
     @Then("^I am redirected to the '(.*)'$")

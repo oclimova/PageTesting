@@ -2,7 +2,6 @@ Feature: http://172.16.44.49/oc/
   As a simple user
   I want to be able to enter on the site main page, create account and login
 
-  @Run
   Background:
     Given I am an unsigned user
 
@@ -14,7 +13,7 @@ Feature: http://172.16.44.49/oc/
   @Run
   Scenario: unsigned user navigates to the Register Account page
     Given I navigated to the 'home page'
-    When I click on 'create an account' link
+    When I click on 'create an account' link from the 'home page'
     Then I am redirected to the 'Register Account page'
     And all text fields on the 'Register Account page' are clear
     But 'Country' field on the 'Register Account page' is filled with 'United Kingdom' value
