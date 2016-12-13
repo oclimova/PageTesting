@@ -18,4 +18,8 @@ public abstract class AbstractPage implements Page {
     public String getPath() {
         return "";
     }
+
+    public AbstractPage navigate() {
+        return this;
+    }
 }

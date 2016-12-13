@@ -40,4 +40,8 @@ public abstract class StoreAbstractPage extends AbstractPage {
             createAccount.click();
         return this;
     }
+
+    public boolean isCurrentPage() {
+        return getDriver().getCurrentUrl().contains(PATH);
+    }
 }

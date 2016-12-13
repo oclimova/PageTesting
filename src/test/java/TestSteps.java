@@ -6,7 +6,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.HomePage;
 import pages.LogoutPage;
 import pages.RegisterAccountPage;
-import pages.WhateverPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +16,6 @@ public class TestSteps {
     private HomePage homePage;
     private RegisterAccountPage registerAccountPage;
     private LogoutPage logoutPage;
-    private WhateverPage whateverPage;
 
     @Before
     public void init() throws Throwable {

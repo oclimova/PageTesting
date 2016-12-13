@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 
 public interface Page {
-    AbstractPage navigate();
+    Page navigate();
     String getPath();
     boolean isCurrentPage();
     WebDriver getDriver();
