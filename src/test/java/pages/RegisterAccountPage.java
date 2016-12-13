@@ -140,7 +140,8 @@ public class RegisterAccountPage extends StoreAbstractPage {
     }
 
     public String getRegion() {
-        return region.getText();
+        Select regionSelect = new Select(region);
+        return regionSelect.getFirstSelectedOption().getText();
     }
 
     public String getPassword() {

@@ -3,22 +3,16 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.AbstractPage;
 import pages.HomePage;
 import pages.LogoutPage;
-import pages.RegisterAccountPage;
 
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
-import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertTrue;
 
 public class TestSteps {
     private WebDriver driver;
-    private HomePage homePage;
-    private RegisterAccountPage registerAccountPage;
-    private LogoutPage logoutPage;
 
     @Before
     public void init() throws Throwable {
@@ -73,27 +67,17 @@ public class TestSteps {
 
     @Then("^(.*) field on the (.*) page is filled with '(.*)' value$")
     public void fieldIsFilled(String fieldName, String pageName, String value) throws Throwable {
-//        if (pageName.equals("Register Account page")) {
-//            registerAccountPage = new RegisterAccountPage(driver);
-//            if (fieldName.equals("Country")) {
-//                assertTrue("Country field value doesn't match", registerAccountPage.getCountry().equals(value));
-//            } else if (fieldName.equals("Region / State")) {
-//                assertTrue("Region / State field value doesn't match", registerAccountPage.getRegion().equals(value));
-//            }
-//        }
         Class<?> pageClass = Class.forName("pages." + pageName + "Page");
         Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
         Method getFieldValue = pageClass.getMethod("get" + fieldName);
         assertTrue(fieldName + " value doesn't match", ((String)getFieldValue.invoke(pageObject)).equals(value));
     }
 
-    @Then("^'Subscribe' radio-group on the 'Register Account page' is set to 'No' value$")
+    @Then("^(.*) radio-group on the (.*) page is set to '(.*)' value$")
     public void radioGroupHasValue(String radiogroupName, String pageName, String value) throws Throwable {
-        if (pageName.equals("Register Account page")) {
-            registerAccountPage = new RegisterAccountPage(driver);
-            if (radiogroupName.equals("Subscribe")) {
-                assertTrue("Radio-group value doesn't match", registerAccountPage.getSubscribe().equals(value));
-            }
-        }
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        Method getValue = pageClass.getMethod("get" + radiogroupName);
+        assertTrue(radiogroupName + " radio-group value doesn't match", (Boolean)((String)getValue.invoke(pageObject)).equals(value));
     }
 }
