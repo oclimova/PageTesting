@@ -14,7 +14,6 @@ public class LogoutPage extends StoreAbstractPage {
     }
 
     public LogoutPage navigate() {
-        System.out.println(getDriver());
         getDriver().get(getPath());
         return this;
     }

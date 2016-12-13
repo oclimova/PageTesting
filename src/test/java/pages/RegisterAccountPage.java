@@ -135,7 +135,8 @@ public class RegisterAccountPage extends StoreAbstractPage {
     }
 
     public String getCountry() {
-        return country.getText();
+        Select countrySelect = new Select(country);
+        return countrySelect.getFirstSelectedOption().getText();
     }
 
     public String getRegion() {
