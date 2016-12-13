@@ -3,17 +3,18 @@ package pages;
 import org.openqa.selenium.WebDriver;
 
 public class LogoutPage extends StoreAbstractPage {
-    private static final String PATH = "index.php?route=account/logout";
+    private static final String LOGOUT_PAGE_PATH = "index.php?route=account/logout";
 
     public LogoutPage(WebDriver webdriver) {
         super(webdriver);
     }
 
     public String getPath() {
-        return super.getPath() + PATH;
+        return super.getPath() + LOGOUT_PAGE_PATH;
     }
 
     public LogoutPage navigate() {
+        System.out.println(getDriver());
         getDriver().get(getPath());
         return this;
     }

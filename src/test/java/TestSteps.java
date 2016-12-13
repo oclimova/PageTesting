@@ -1,6 +1,6 @@
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.*;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.AbstractPage;
@@ -8,8 +8,10 @@ import pages.HomePage;
 import pages.LogoutPage;
 import pages.RegisterAccountPage;
 
+import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertTrue;
 
 public class TestSteps {
@@ -34,57 +36,55 @@ public class TestSteps {
 
     @Given("^I am an unsigned user$")
     public void iAmUnsigned() throws Throwable {
-        logoutPage = new LogoutPage(driver);
-        logoutPage.navigate();
+        new LogoutPage(driver).navigate();
     }
 
-    @When("^I navigate(?:d?) to the '(.*)'$")
-    public void navigate(String destination) throws Throwable {
-//        if (destination.equals("home page")) {
-//            homePage = new HomePage(driver);
-//            homePage.navigate();
-//        }
-        Class pageClass;
+    @When("^I navigate(?:d?) to the (.*) page$")
+    public void navigate(String pageName) throws Throwable {
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        Method navigate = pageClass.getMethod("navigate");
+        navigate.invoke(pageObject);
     }
 
-    @Then("^the '(.*)' is displayed$")
+    @Then("^the (.*) page is displayed$")
     public void displayed(String pageName) throws Throwable {
-        if (pageName.equals("home page")) {
-            homePage = new HomePage(driver);
-            assertTrue("Home page isn't displayed", homePage.isCurrentPage());
-        }
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        Method isCurrentPage = pageClass.getMethod("isCurrentPage");
+        assertTrue(pageName + " page isn't displayed correctly", (Boolean)isCurrentPage.invoke(pageObject));
     }
 
-    @When("^I click on '(.*)' link from the '(.*)'$")
+    @When("^I click on (.*) link from the (.*) page$")
     public void clickLink(String linkName, String pageName) throws Throwable {
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        Method clickLink = pageClass.getMethod("click" + linkName);
+        clickLink.invoke(pageObject);
     }
 
-    @Then("^I am redirected to the '(.*)'$")
-    public void redirectedTo(String pageTitle) throws Throwable {
-        if (pageTitle.equals("Register Account page")) {
-            registerAccountPage = new RegisterAccountPage(driver);
-            assertTrue("I wasn't redirected to Register Account page", registerAccountPage.isCurrentPage());
-        }
-    }
-
-    @Then("^all text fields on the '(.*)' are clear$")
+    @Then("^all text fields on the (.*) page are clear$")
     public void textFieldsAreClear(String pageName) throws Throwable {
-        if (pageName.equals("Register Account page")) {
-            registerAccountPage = new RegisterAccountPage(driver);
-            assertTrue("Text Fields are not clear", registerAccountPage.textFieldsAreClear());
-        }
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        Method textFieldsAreClear = pageClass.getMethod("textFieldsAreClear");
+        assertTrue("Not all fields from " + pageName + " page are clear", (Boolean)textFieldsAreClear.invoke(pageObject));
     }
 
-    @Then("^'(.*)' field on the '(.*)' is filled with '(.*)' value$")
+    @Then("^(.*) field on the (.*) page is filled with '(.*)' value$")
     public void fieldIsFilled(String fieldName, String pageName, String value) throws Throwable {
-        if (pageName.equals("Register Account page")) {
-            registerAccountPage = new RegisterAccountPage(driver);
-            if (fieldName.equals("Country")) {
-                assertTrue("Country field value doesn't match", registerAccountPage.getCountry().equals(value));
-            } else if (fieldName.equals("Region / State")) {
-                assertTrue("Region / State field value doesn't match", registerAccountPage.getRegion().equals(value));
-            }
-        }
+//        if (pageName.equals("Register Account page")) {
+//            registerAccountPage = new RegisterAccountPage(driver);
+//            if (fieldName.equals("Country")) {
+//                assertTrue("Country field value doesn't match", registerAccountPage.getCountry().equals(value));
+//            } else if (fieldName.equals("Region / State")) {
+//                assertTrue("Region / State field value doesn't match", registerAccountPage.getRegion().equals(value));
+//            }
+//        }
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        Method getFieldValue = pageClass.getMethod("get" + fieldName);
+        assertTrue(fieldName + " value doesn't match", ((String)getFieldValue.invoke(pageObject)).equals(value));
     }
 
     @Then("^'Subscribe' radio-group on the 'Register Account page' is set to 'No' value$")
