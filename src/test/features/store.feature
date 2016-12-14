@@ -1,6 +1,7 @@
-Feature: http://172.16.44.49/oc/
-  As a simple user
-  I want to be able to enter on the site main page, create account and login
+Feature: site basic functions
+  In order to create account and login
+  As a store user
+  I want to enter the site
 
   Background:
     Given I am an unsigned user
