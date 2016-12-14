@@ -22,8 +22,8 @@ Feature: http://172.16.44.49/oc/
     And Region field on the RegisterAccount page is filled with '--- Please Select ---' value
     And Subscribe radio-group on the RegisterAccount page is set to 'No' value
 
-  # this one's steps aren't implemented
-  @Run
+  # this one runs correctly
+  @NotRun
   Scenario: unsigned user navigates to the Register Account page and tries to register an account with complete and valid data
     Given I navigated to the RegisterAccount page
     # we don't have access to the database, so WE HAVE TO PUT A NEW EMAIL IN THE NEXT STEP EVERY TIME WE RUN IT
@@ -43,7 +43,7 @@ Feature: http://172.16.44.49/oc/
     Then the AccountCreated page is displayed
 
   # this one's steps aren't implemented
-  @NotRun
+  @Run
   Scenario: unsigned user navigates to the Login page
     Given I navigated to the Home page
     When I click on the Login link from the Home page

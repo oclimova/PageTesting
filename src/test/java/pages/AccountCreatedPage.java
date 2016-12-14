@@ -2,9 +2,6 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by oclimova on 12/14/2016.
- */
 public class AccountCreatedPage extends StoreAbstractPage {
     private static final String PATH = "index.php?route=account/success";
 
