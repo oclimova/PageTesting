@@ -216,15 +216,15 @@ public class RegisterAccountPage extends StoreAbstractPage {
         return this;
     }
 
-    public RegisterAccountPage setRandomCountry() {
+    public RegisterAccountPage setCountry(String index) {
         Select select = new Select(country);
-        select.selectByIndex((int)(Math.random()*select.getOptions().size()));
+        select.selectByIndex(Integer.valueOf(index));
         return this;
     }
 
-    public RegisterAccountPage setRandomRegion() {
+    public RegisterAccountPage setRegion(String index) {
         Select select = new Select(region);
-        select.selectByIndex((int)(Math.random()*select.getOptions().size()));
+        select.selectByIndex(Integer.valueOf(index));
         return this;
     }
 
