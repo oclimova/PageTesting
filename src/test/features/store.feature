@@ -28,18 +28,18 @@ Feature: http://172.16.44.49/oc/
     Given I navigated to the RegisterAccount page
     # we don't have access to the database, so we have to put a new email in the next step every time we run it
     When I filled some fields on the RegisterAccount page with the following data
-      | firstName       | aaa              |
-      | lastName        | aaa              |
-      | email           | email1@gmail.com |
-      | telephone       | +37368179073     |
-      | address1        | aaa              |
-      | city            | aaa              |
-      | country         | 0                |
-      | region          | 0                |
-      | password        | password         |
-      | passwordConfirm | password         |
+      | FirstName       | aaa              |
+      | LastName        | aaa              |
+      | Email           | email1@gmail.com |
+      | Telephone       | +37368179073     |
+      | Address1        | aaa              |
+      | City            | aaa              |
+      | Country         | 0                |
+      | Region          | 0                |
+      | Password        | password         |
+      | PasswordConfirm | password         |
     And pressed continue button on the RegisterAccount page
-    Then I am shown 'Your Account Has Been Created!' message
+    Then AccountCreated page is displayed
 
   @NotRun
   # this one's steps aren't implemented
