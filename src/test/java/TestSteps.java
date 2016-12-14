@@ -7,6 +7,7 @@ import pages.HomePage;
 import pages.LogoutPage;
 
 import java.lang.reflect.Method;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
@@ -79,5 +80,31 @@ public class TestSteps {
         Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
         Method getValue = pageClass.getMethod("get" + radiogroupName);
         assertTrue(radiogroupName + " radio-group value doesn't match", (Boolean)((String)getValue.invoke(pageObject)).equals(value));
+    }
+
+    @When("^I filled some fields on the (.*) page with the following data$")
+    public void fillFields(String pageName, Map<String, String> values) throws Throwable {
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        for(Map.Entry<String, String> value: values.entrySet()) {
+            Method setMethod = pageClass.getMethod("set" + value.getKey(), String.class);
+            setMethod.invoke(pageObject, value.getValue());
+        }
+    }
+
+    @When("^pressed (.*) button on the (.*) page$")
+    public void pressButton(String buttonName, String pageName) throws Throwable {
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        Method pressMethod = pageClass.getMethod("press" + buttonName);
+        pressMethod.invoke(pageObject);
+    }
+
+    @When("^I clicked on the (.*) checkbox from the (.*) page$")
+    public void clickCheckbox(String checkboxName, String pageName) throws Throwable {
+        Class<?> pageClass = Class.forName("pages." + pageName + "Page");
+        Object pageObject = pageClass.getConstructor(WebDriver.class).newInstance(driver);
+        Method clickMethod = pageClass.getMethod("set" + checkboxName);
+        clickMethod.invoke(pageObject);
     }
 }
