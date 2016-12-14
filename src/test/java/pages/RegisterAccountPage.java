@@ -51,6 +51,8 @@ public class RegisterAccountPage extends StoreAbstractPage {
     private WebElement noRadio;
     @FindBy(xpath = "//*[@id=\"content\"]/form/div[5]/div/input[1]")
     private WebElement privacyPolicy;
+    @FindBy(xpath = "//*[@id=\"content\"]/form/div[5]/div/input[2]")
+    private WebElement continueButton;
 
     public RegisterAccountPage(WebDriver driver) {
         super(driver);
@@ -249,5 +251,9 @@ public class RegisterAccountPage extends StoreAbstractPage {
     public RegisterAccountPage setPrivacyPolicy() {
         privacyPolicy.click();
         return this;
+    }
+
+    public void pressContinue() {
+        continueButton.click();
     }
 }
