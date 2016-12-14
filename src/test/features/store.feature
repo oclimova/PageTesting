@@ -6,13 +6,13 @@ Feature: http://172.16.44.49/oc/
     Given I am an unsigned user
 
   # this one runs correctly
-  @NotRun
+  @Run
   Scenario: unsigned user navigates to the home page
     When I navigate to the Home page
     Then the Home page is displayed
 
   # this one runs correctly
-  @NotRun
+  @Run
   Scenario: unsigned user navigates to the Register Account page
     Given I navigated to the Home page
     When I click on CreateAccount link from the Home page
@@ -23,7 +23,7 @@ Feature: http://172.16.44.49/oc/
     And Subscribe radio-group on the RegisterAccount page is set to 'No' value
 
   # this one runs correctly
-  @NotRun
+  @Run
   Scenario: unsigned user navigates to the Register Account page and tries to register an account with complete and valid data
     Given I navigated to the RegisterAccount page
     # we don't have access to the database, so WE HAVE TO PUT A NEW EMAIL IN THE NEXT STEP EVERY TIME WE RUN IT
@@ -42,7 +42,7 @@ Feature: http://172.16.44.49/oc/
     And pressed Continue button on the RegisterAccount page
     Then the AccountCreated page is displayed
 
-  # this one's steps aren't implemented
+  # this one runs correctly
   @Run
   Scenario: unsigned user navigates to the Login page
     Given I navigated to the Home page
