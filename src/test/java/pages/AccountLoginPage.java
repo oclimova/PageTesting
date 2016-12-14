@@ -35,6 +35,11 @@ public class AccountLoginPage extends StoreAbstractPage {
         return driver.getTitle().equals("Account Login");
     }
 
+    public boolean textFieldsAreClear() {
+        return getEmail().equals("")
+                && getPassword().equals("");
+    }
+
     public String getEmail() {
         return email.getText();
     }

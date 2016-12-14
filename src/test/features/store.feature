@@ -46,6 +46,6 @@ Feature: http://172.16.44.49/oc/
   @Run
   Scenario: unsigned user navigates to the Login page
     Given I navigated to the Home page
-    When I click on the Login link from the Home page
+    When I click on Login link from the Home page
     And the AccountLogin page is displayed
     And all text fields on the AccountLogin page are clear
